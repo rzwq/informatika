@@ -28,6 +28,34 @@ void commonLeters() {
 	cout << endl;
 }
 
+void bookPointer() {
+	map<int, set<string>> books;
+	int words;
+	cin >> words;
+
+	for (int i = 0; i < words; ++i) {
+		string word;
+		int page;
+		cin >> word >> page;
+		books[page].insert(word);
+	}
+
+	for (auto page : books) {
+		vector<string> words;
+		for (auto word : page.second) {
+			words.push_back(word);
+		}
+		sort(words.begin(), words.end());
+		if (page.second.size() == 0) continue;
+
+		cout << page.first;
+		for (auto word : words) {
+			cout << " " << word;
+		}
+		cout << endl;
+	};
+}
+
 template <typename T> void Duplicate(std::vector<T> &v) {
 	int size = v.size();
 
