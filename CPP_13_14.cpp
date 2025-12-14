@@ -56,10 +56,17 @@ void bookPointer() {
 	};
 }
 
-template <typename T> void Duplicate(std::vector<T> &v) {
+template <typename T>
+void Duplicate(std::vector<T> &v) {
 	int size = v.size();
 
 	for (size_t i = 0; i < size; ++i) {
 		v.push_back(v[i]);
 	}
+}
+
+int main() {
+	// commonLeters();
+	// bookPointer();
+	// Duplicate(std::vector<T> &v);
 }
